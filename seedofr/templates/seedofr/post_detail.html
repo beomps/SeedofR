@@ -1,0 +1,13 @@
+{% extends 'seedofr/index.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if data.published_date %}
+            <div class="date">
+                {{ data.published_date }}
+            </div>
+        {% endif %}
+        <h1>{{ data.author }}</h1>
+        <p>{{ data.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}

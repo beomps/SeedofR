@@ -1,0 +1,30 @@
+{% load static %}
+<html>
+<head>
+        <title>SeedofR Index</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/basic.css' %}">
+</head>
+<body>
+    <div>
+            <h1><a href="/seedofr">seedofr</a></h1>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                <a href="{% url 'post_new' %}">Protect my works<span class="glyphicon glyphicon-plus"></span></a>//
+                <a href="{% url 'post_compare' %}" >Check your works<span class=""></span></a>
+            </div>
+            <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

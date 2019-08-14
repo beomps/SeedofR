@@ -1,0 +1,11 @@
+<div>
+    <h1><a href="/">seedofr</a></h1>
+</div>
+
+{% for data in datas %}
+    <div>
+        <p>published: {{ data.published_date }}</p>
+        <h1><a href="">{{ data.author }}</a></h1>
+        <p>{{ data.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
