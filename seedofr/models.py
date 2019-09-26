@@ -5,12 +5,17 @@ from django.utils import timezone
 # fresh/die/dry/humid/lacksun/etc
 class Data(models.Model):
     seq = models.AutoField(primary_key=True,blank=True)
-    name = models.CharField(max_length=200,null=True,blank=True)
-    author = models.CharField(max_length=200, null=True, blank=True)
-    contents = models.TextField(null=True,blank=True)
-    created_date = models.DateTimeField(default=timezone.now)
+    plant_name = models.CharField(max_length=200,null=True,blank=True)
+    plant_picture = models.ImageField(blank=True, null=True)
+    temp = models.CharField(max_length=128,null=True,blank=True)
+    humid = models.CharField(max_length=128,null=True,blank=True)
+    light = models.CharField(max_length=128,null=True,blank=True)
+    flow_water = models.CharField(max_length=128,null=True,blank=True)
+    ph_water = models.CharField(max_length=128,null=True,blank=True)
+    tds_water = models.CharField(max_length=128,null=True,blank=True)
+    started_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     etc = models.CharField(max_length=128,null=True,blank=True)
 
     def __str__(self):
-        return self.author
+        return self.plant_name
