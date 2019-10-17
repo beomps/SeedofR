@@ -8,4 +8,4 @@ class PostForm(forms.ModelForm):
     #실제로는 아래보다 모델에 있는 파라미터를 더 입력 받아햐 합니다.
     class Meta:
         model = Data
-        fields = ('name', 'author','contents', 'published_date', 'etc',)
+        fields = ('plant_name', 'plant_picture','temp', 'humid', 'light','flow_water','ph_water','tds_water','started_date','published_date','etc')
