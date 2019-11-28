@@ -31,16 +31,16 @@ def post_new(request):
             post = form.save(commit=False)
             post.author = request.user
             post.published_date = timezone.now()
+            uploadFile = request.FILES['plant_picture'];
 
-            #handle_uploaded_file(request.FILES['file'])
-
-            with handle_uploaded_file(request.FILES['file']) as images_file:
-                classes = visual_recognition.classify(
-                    images_file,
-                    threshold='0.6',
-                classifier_ids='default').get_result()
+            
+            classes = visual_recognition.classify(
+                uploadFile,
+                threshold='0.6',
+            classifier_ids='default').get_result()
             
             print(json.dumps(classes, indent=2))  
+            
 
             post.save()
             return redirect('post_detail', seq=post.seq)
