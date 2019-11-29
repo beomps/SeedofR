@@ -16,6 +16,7 @@ class Data(models.Model):
     started_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     etc = models.CharField(max_length=128,null=True,blank=True)
+    desc = models.TextField(null=True,blank=True)
 
     def __str__(self):
         return self.plant_name

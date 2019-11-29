@@ -39,9 +39,16 @@ def post_new(request):
                 threshold='0.6',
             classifier_ids='default').get_result()
             
-            print(json.dumps(classes, indent=2))  
-            
-
+            for image in classes.get('images'):
+                for class1 in image.get('classifiers'):
+                    print(class1)
+                    post.desc = class1
+                    """
+                    for class2 in class1.get('classes'):
+                        print(class2.get('class'))
+                        print(class2.get('score'))
+                        print(class2.get('type_hierarchy'))
+                    """
             post.save()
             return redirect('post_detail', seq=post.seq)
     else:
